@@ -48,7 +48,7 @@ By using this application, you are directly contributing to network research. We
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🎒 Store & Forward (Mule)</h3>
+      <h3>🎒 Store & Forward</h3>
       <p>If a direct path is unavailable, packets are securely parked in the memory of mobile nodes. These "mules" physically carry the data across disconnected zones, deploying it upon detecting the target.</p>
     </td>
     <td width="50%" valign="top">
