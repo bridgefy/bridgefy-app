@@ -65,27 +65,27 @@ By using this application, you are directly contributing to network research. We
 Below is a visualization of our proprietary Multi-Hop and Store & Forward routing behavior.
 
 ```mermaid
-graph TD
-    subgraph Offline Zone A
-    E[Emisor] <-->|E2EE Packet| N1(Node 1)
-    N1 <--> M{Mobile Mule}
+graph LR
+    subgraph Zone A [Offline Zone A]
+    S[Sender] -->|1. Transmit| N1(Node 1)
+    N1 -->|2. Park Payload| M{Mobile Mule}
     end
 
-    subgraph Disconnected Terrain
-    M -.->|Physical Transit| M2{Mobile Mule}
+    M -.->|3. Physical Transit| M2{Mobile Mule}
+
+    subgraph Zone B [Offline Zone B]
+    M2 -->|4. Forward| N2(Node 2)
+    N2 -->|5. Deliver| R[Receiver]
     end
 
-    subgraph Offline Zone B
-    M2 <--> N2(Node 2)
-    N2 <-->|Payload Delivered| D[Destination]
-    end
-
-    style E fill:#000000,stroke:#E23828,stroke-width:2px,color:#fff
-    style D fill:#000000,stroke:#E23828,stroke-width:2px,color:#fff
+    style S fill:#000000,stroke:#E23828,stroke-width:2px,color:#fff
+    style R fill:#000000,stroke:#E23828,stroke-width:2px,color:#fff
     style M fill:#E23828,stroke:#fff,stroke-width:2px,color:#fff
     style M2 fill:#E23828,stroke:#fff,stroke-width:2px,color:#fff
     style N1 fill:#1a1a1a,stroke:#333,color:#fff
     style N2 fill:#1a1a1a,stroke:#333,color:#fff
+    style Zone A fill:none,stroke:#333,stroke-dasharray: 5 5
+    style Zone B fill:none,stroke:#333,stroke-dasharray: 5 5
 ```
 
 ---
