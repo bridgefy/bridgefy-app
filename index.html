@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,8 +22,15 @@
             --font-mono: 'JetBrains Mono', monospace;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: var(--font-sans);
@@ -31,7 +39,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            background-image: 
+            background-image:
                 linear-gradient(var(--border-color) 1px, transparent 1px),
                 linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
             background-size: 50px 50px;
@@ -39,255 +47,1222 @@
         }
 
         /* --- Scroll Reveal Animations Framework --- */
-        .reveal, .reveal-up, .reveal-left, .reveal-right {
+        .reveal,
+        .reveal-up,
+        .reveal-left,
+        .reveal-right {
             opacity: 0;
-            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
-                        transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
             will-change: opacity, transform;
         }
-        
-        .reveal-up { transform: translateY(40px); }
-        .reveal-left { transform: translateX(-40px); }
-        .reveal-right { transform: translateX(40px); }
-        
+
+        .reveal-up {
+            transform: translateY(40px);
+        }
+
+        .reveal-left {
+            transform: translateX(-40px);
+        }
+
+        .reveal-right {
+            transform: translateX(40px);
+        }
+
         /* Active States */
-        .reveal.active, .reveal-up.active, .reveal-left.active, .reveal-right.active {
+        .reveal.active,
+        .reveal-up.active,
+        .reveal-left.active,
+        .reveal-right.active {
             opacity: 1;
             transform: translate(0, 0);
         }
 
         /* Stagger Delays */
-        .delay-100 { transition-delay: 0.1s; }
-        .delay-200 { transition-delay: 0.2s; }
-        .delay-300 { transition-delay: 0.3s; }
-        .delay-400 { transition-delay: 0.4s; }
-        .delay-500 { transition-delay: 0.5s; }
+        .delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-300 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-400 {
+            transition-delay: 0.4s;
+        }
+
+        .delay-500 {
+            transition-delay: 0.5s;
+        }
 
         /* Ambient glows for premium feel */
         .ambient-glow {
-            position: fixed; top: -20%; left: 50%; transform: translateX(-50%);
-            width: 80vw; height: 50vh; background: radial-gradient(ellipse at center, rgba(226, 56, 40, 0.08) 0%, transparent 70%);
-            pointer-events: none; z-index: 0;
+            position: fixed;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80vw;
+            height: 50vh;
+            background: radial-gradient(ellipse at center, rgba(226, 56, 40, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; position: relative; z-index: 2; }
-        .section-padding { padding: 8rem 0; }
-        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-padding {
+            padding: 8rem 0;
+        }
+
         /* Typography & Headers */
-        .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-label { font-size: 0.75rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.25em; color: var(--brand-red); margin-bottom: 1rem; display: block; }
-        .section-header h2 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1.2rem; }
-        .section-header p { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto; line-height: 1.7; }
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--brand-red);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.2rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
 
         /* Buttons */
         .btn {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: 500; font-size: 0.9rem;
-            text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: 1px solid transparent;
-            letter-spacing: 0.02em; font-family: var(--font-sans);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+            letter-spacing: 0.02em;
+            font-family: var(--font-sans);
         }
-        .btn-primary { background-color: var(--text-main); color: var(--bg-base); }
-        .btn-primary:hover { background-color: #d1d1d1; transform: translateY(-1px); box-shadow: 0 8px 20px rgba(255,255,255,0.1); }
-        .btn-accent { background-color: transparent; border-color: var(--brand-red); color: var(--brand-red); }
-        .btn-accent:hover { background-color: var(--brand-red-glow); box-shadow: 0 0 20px var(--brand-red-glow); text-shadow: 0 0 8px rgba(226,56,40,0.5); }
-        .btn-outline { background-color: rgba(10, 10, 12, 0.8); border-color: var(--border-color); color: var(--text-main); backdrop-filter: blur(10px); }
-        .btn-outline:hover { border-color: rgba(255,255,255,0.4); background-color: #111; }
+
+        .btn-primary {
+            background-color: var(--text-main);
+            color: var(--bg-base);
+        }
+
+        .btn-primary:hover {
+            background-color: #d1d1d1;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-accent {
+            background-color: transparent;
+            border-color: var(--brand-red);
+            color: var(--brand-red);
+        }
+
+        .btn-accent:hover {
+            background-color: var(--brand-red-glow);
+            box-shadow: 0 0 20px var(--brand-red-glow);
+            text-shadow: 0 0 8px rgba(226, 56, 40, 0.5);
+        }
+
+        .btn-outline {
+            background-color: rgba(10, 10, 12, 0.8);
+            border-color: var(--border-color);
+            color: var(--text-main);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            background-color: #111;
+        }
 
         /* Navigation */
         nav {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: var(--bg-glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-color);
         }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .logo img { height: 24px; width: auto; filter: drop-shadow(0 0 8px rgba(255,255,255,0.1)); }
-        .nav-links { display: flex; gap: 2.5rem; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.75rem; font-weight: 600; transition: color 0.2s; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-mono); }
-        .nav-links a:hover { color: var(--text-main); }
-        @media (max-width: 900px) { .nav-links { display: none; } }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo img {
+            height: 24px;
+            width: auto;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: color 0.2s;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-family: var(--font-mono);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+        }
 
         /* Hero Section */
-        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; }
-        #hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0.8; }
-        .hero-content { position: relative; z-index: 2; max-width: 900px; padding: 0 5%; margin-top: 40px; }
-        
-        .hero-badge { 
-            display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; 
-            border-radius: 2px; border: 1px solid rgba(226, 56, 40, 0.4); 
-            background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-            color: var(--brand-red); font-family: var(--font-mono); font-size: 0.7rem; 
-            margin-bottom: 2rem; letter-spacing: 0.15em; text-transform: uppercase;
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 5%;
+            margin-top: 40px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 2px;
+            border: 1px solid rgba(226, 56, 40, 0.4);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            color: var(--brand-red);
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
             box-shadow: 0 0 15px rgba(226, 56, 40, 0.1);
         }
-        .hero-badge::before { content: ''; width: 4px; height: 4px; background: var(--brand-red); border-radius: 50%; box-shadow: 0 0 8px var(--brand-red); }
-        
-        .hero h1 { font-size: clamp(3rem, 5vw, 5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.04em; }
-        .hero p { font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--text-muted); margin-bottom: 2.5rem; font-weight: 400; max-width: 650px; margin-inline: auto; }
-        .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        .hero-badge::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: var(--brand-red);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--brand-red);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 5vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.04em;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 1.5vw, 1.15rem);
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            max-width: 650px;
+            margin-inline: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
         /* Bento Box Feature Grid */
-        .features-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1px; background: var(--border-color); border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; }
-        .feature-card { background: var(--bg-surface); padding: 2.5rem; position: relative; transition: background 0.4s ease; }
-        .feature-card:hover { background: #0c0c0f; }
-        
-        .feat-p2p { grid-column: span 5; }
-        .feat-mesh { grid-column: span 7; }
-        .feat-store { grid-column: span 7; }
-        .feat-broad { grid-column: span 5; }
-        @media (max-width: 900px) { .feat-p2p, .feat-mesh, .feat-store, .feat-broad { grid-column: span 12; } }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1px;
+            background: var(--border-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+        }
 
-        .feature-card h3 { font-size: 1.2rem; margin-bottom: 0.8rem; font-weight: 600; font-family: var(--font-mono); letter-spacing: -0.02em; }
-        .feature-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
-        
+        .feature-card {
+            background: var(--bg-surface);
+            padding: 2.5rem;
+            position: relative;
+            transition: background 0.4s ease;
+        }
+
+        .feature-card:hover {
+            background: #0c0c0f;
+        }
+
+        .feat-p2p {
+            grid-column: span 5;
+        }
+
+        .feat-mesh {
+            grid-column: span 7;
+        }
+
+        .feat-store {
+            grid-column: span 7;
+        }
+
+        .feat-broad {
+            grid-column: span 5;
+        }
+
+        @media (max-width: 900px) {
+
+            .feat-p2p,
+            .feat-mesh,
+            .feat-store,
+            .feat-broad {
+                grid-column: span 12;
+            }
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            font-family: var(--font-mono);
+            letter-spacing: -0.02em;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
         /* High-tech Animations Framework */
-        .anim-window { height: 220px; background: #020202; border-radius: 4px; margin-bottom: 2rem; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.03); box-shadow: inset 0 0 30px rgba(0,0,0,0.8); }
-        
-        .node { width: 8px; height: 8px; background: #333; border-radius: 50%; position: absolute; z-index: 2; box-shadow: 0 0 8px rgba(255,255,255,0.05); transform: translate(-50%, -50%); transition: all 0.3s; }
-        .node.active-node { background: var(--text-main); box-shadow: 0 0 12px rgba(255,255,255,0.4); }
-        .node.dest { background: var(--text-main); box-shadow: 0 0 15px var(--brand-red); border: 1px solid var(--brand-red); }
-        
-        .packet { width: 4px; height: 4px; background: #fff; border-radius: 50%; position: absolute; z-index: 5; box-shadow: 0 0 10px 2px var(--brand-red), 0 0 20px var(--brand-red); transform: translate(-50%, -50%); }
-        .anim-line { position: absolute; height: 1px; background: rgba(255,255,255,0.06); z-index: 1; transform-origin: left center; }
+        .anim-window {
+            height: 220px;
+            background: #020202;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .node {
+            width: 8px;
+            height: 8px;
+            background: #333;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 2;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+            transform: translate(-50%, -50%);
+            transition: all 0.3s;
+        }
+
+        .node.active-node {
+            background: var(--text-main);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+        }
+
+        .node.dest {
+            background: var(--text-main);
+            box-shadow: 0 0 15px var(--brand-red);
+            border: 1px solid var(--brand-red);
+        }
+
+        .packet {
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 5;
+            box-shadow: 0 0 10px 2px var(--brand-red), 0 0 20px var(--brand-red);
+            transform: translate(-50%, -50%);
+        }
+
+        .anim-line {
+            position: absolute;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
+            z-index: 1;
+            transform-origin: left center;
+        }
 
         /* 1. P2P Animation */
-        #anim-p2p .n1 { left: 25%; top: 50%; } #anim-p2p .n2 { left: 75%; top: 50%; }
-        #anim-p2p .anim-line { left: 25%; top: 50%; width: 50%; }
-        @keyframes moveP2P { 0% { left: 25%; opacity: 0; } 15% { opacity: 1; } 85% { left: 75%; opacity: 1; } 100% { left: 75%; opacity: 0; } }
-        #anim-p2p .packet { top: 50%; animation: moveP2P 2s infinite cubic-bezier(0.4, 0, 0.2, 1); }
+        #anim-p2p .n1 {
+            left: 25%;
+            top: 50%;
+        }
+
+        #anim-p2p .n2 {
+            left: 75%;
+            top: 50%;
+        }
+
+        #anim-p2p .anim-line {
+            left: 25%;
+            top: 50%;
+            width: 50%;
+        }
+
+        @keyframes moveP2P {
+            0% {
+                left: 25%;
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            85% {
+                left: 75%;
+                opacity: 1;
+            }
+
+            100% {
+                left: 75%;
+                opacity: 0;
+            }
+        }
+
+        #anim-p2p .packet {
+            top: 50%;
+            animation: moveP2P 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
         /* 2. Mesh Animation */
-        #anim-mesh .n1 { left: 15%; top: 50%; } #anim-mesh .n2 { left: 35%; top: 30%; } #anim-mesh .n3 { left: 55%; top: 70%; } #anim-mesh .n4 { left: 75%; top: 35%; } #anim-mesh .n5 { left: 85%; top: 60%; }
-        #anim-mesh .l1 { left: 15%; top: 50%; width: 28%; transform: rotate(-45deg); } 
-        #anim-mesh .l2 { left: 35%; top: 30%; width: 45%; transform: rotate(63deg); } 
-        #anim-mesh .l3 { left: 55%; top: 70%; width: 40%; transform: rotate(-60deg); } 
-        #anim-mesh .l4 { left: 75%; top: 35%; width: 27%; transform: rotate(68deg); }
-        @keyframes moveMesh { 
-            0% { left: 15%; top: 50%; opacity: 1;} 
-            25% { left: 35%; top: 30%; } 
-            50% { left: 55%; top: 70%; } 
-            75% { left: 75%; top: 35%; } 
-            95% { left: 85%; top: 60%; opacity: 1;} 
-            100% { left: 85%; top: 60%; opacity: 0;} 
+        #anim-mesh .n1 {
+            left: 15%;
+            top: 50%;
         }
-        #anim-mesh .packet { animation: moveMesh 3s infinite linear; }
+
+        #anim-mesh .n2 {
+            left: 35%;
+            top: 30%;
+        }
+
+        #anim-mesh .n3 {
+            left: 55%;
+            top: 70%;
+        }
+
+        #anim-mesh .n4 {
+            left: 75%;
+            top: 35%;
+        }
+
+        #anim-mesh .n5 {
+            left: 85%;
+            top: 60%;
+        }
+
+        #anim-mesh .l1 {
+            left: 15%;
+            top: 50%;
+            width: 28%;
+            transform: rotate(-45deg);
+        }
+
+        #anim-mesh .l2 {
+            left: 35%;
+            top: 30%;
+            width: 45%;
+            transform: rotate(63deg);
+        }
+
+        #anim-mesh .l3 {
+            left: 55%;
+            top: 70%;
+            width: 40%;
+            transform: rotate(-60deg);
+        }
+
+        #anim-mesh .l4 {
+            left: 75%;
+            top: 35%;
+            width: 27%;
+            transform: rotate(68deg);
+        }
+
+        @keyframes moveMesh {
+            0% {
+                left: 15%;
+                top: 50%;
+                opacity: 1;
+            }
+
+            25% {
+                left: 35%;
+                top: 30%;
+            }
+
+            50% {
+                left: 55%;
+                top: 70%;
+            }
+
+            75% {
+                left: 75%;
+                top: 35%;
+            }
+
+            95% {
+                left: 85%;
+                top: 60%;
+                opacity: 1;
+            }
+
+            100% {
+                left: 85%;
+                top: 60%;
+                opacity: 0;
+            }
+        }
+
+        #anim-mesh .packet {
+            animation: moveMesh 3s infinite linear;
+        }
 
         /* 3. Broadcast Cascade Animation */
-        #anim-broadcast .center-node { left: 50%; top: 50%; background: var(--brand-red); box-shadow: 0 0 15px var(--brand-red); z-index: 4; }
-        #anim-broadcast .inner { background: #666; }
-        #anim-broadcast .i1 { left: 30%; top: 35%; } #anim-broadcast .i2 { left: 70%; top: 35%; } #anim-broadcast .i3 { left: 50%; top: 75%; }
-        #anim-broadcast .outer { background: #333; }
-        #anim-broadcast .o1 { left: 15%; top: 15%; } #anim-broadcast .o2 { left: 85%; top: 15%; } 
-        #anim-broadcast .o3 { left: 85%; top: 85%; } #anim-broadcast .o4 { left: 15%; top: 85%; } #anim-broadcast .o5 { left: 50%; top: 15%; }
-        
-        .pulse-ring { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); border: 1px solid var(--brand-red); border-radius: 50%; opacity: 0; z-index: 1; pointer-events: none;}
-        
-        @keyframes ringCenter { 0% { width: 0; height: 0; opacity: 1; border-width: 2px;} 30% { width: 140px; height: 140px; opacity: 0; border-width: 1px;} 100% { opacity: 0;} }
-        @keyframes ringInner { 0%, 25% { width: 0; height: 0; opacity: 0; } 26% { width: 0; height: 0; opacity: 1; border-width: 1.5px; border-color: #fff;} 60% { width: 100px; height: 100px; opacity: 0; border-width: 0.5px;} 100% { opacity: 0;} }
-        @keyframes flashInner { 0%, 20% { background: #666; box-shadow: none; } 25%, 35% { background: #fff; box-shadow: 0 0 15px #fff; } 100% { background: #666; box-shadow: none; } }
-        @keyframes flashOuter { 0%, 50% { background: #333; box-shadow: none; } 55%, 65% { background: rgba(255,255,255,0.8); box-shadow: 0 0 10px rgba(255,255,255,0.5); } 100% { background: #333; box-shadow: none; } }
+        #anim-broadcast .center-node {
+            left: 50%;
+            top: 50%;
+            background: var(--brand-red);
+            box-shadow: 0 0 15px var(--brand-red);
+            z-index: 4;
+        }
 
-        #anim-broadcast .center-ring { animation: ringCenter 3.5s infinite ease-out; }
-        #anim-broadcast .inner-ring { animation: ringInner 3.5s infinite ease-out; }
-        #anim-broadcast .inner { animation: flashInner 3.5s infinite ease-out; }
-        #anim-broadcast .outer { animation: flashOuter 3.5s infinite ease-out; }
+        #anim-broadcast .inner {
+            background: #666;
+        }
+
+        #anim-broadcast .i1 {
+            left: 30%;
+            top: 35%;
+        }
+
+        #anim-broadcast .i2 {
+            left: 70%;
+            top: 35%;
+        }
+
+        #anim-broadcast .i3 {
+            left: 50%;
+            top: 75%;
+        }
+
+        #anim-broadcast .outer {
+            background: #333;
+        }
+
+        #anim-broadcast .o1 {
+            left: 15%;
+            top: 15%;
+        }
+
+        #anim-broadcast .o2 {
+            left: 85%;
+            top: 15%;
+        }
+
+        #anim-broadcast .o3 {
+            left: 85%;
+            top: 85%;
+        }
+
+        #anim-broadcast .o4 {
+            left: 15%;
+            top: 85%;
+        }
+
+        #anim-broadcast .o5 {
+            left: 50%;
+            top: 15%;
+        }
+
+        .pulse-ring {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid var(--brand-red);
+            border-radius: 50%;
+            opacity: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes ringCenter {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+                border-width: 2px;
+            }
+
+            30% {
+                width: 140px;
+                height: 140px;
+                opacity: 0;
+                border-width: 1px;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes ringInner {
+
+            0%,
+            25% {
+                width: 0;
+                height: 0;
+                opacity: 0;
+            }
+
+            26% {
+                width: 0;
+                height: 0;
+                opacity: 1;
+                border-width: 1.5px;
+                border-color: #fff;
+            }
+
+            60% {
+                width: 100px;
+                height: 100px;
+                opacity: 0;
+                border-width: 0.5px;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes flashInner {
+
+            0%,
+            20% {
+                background: #666;
+                box-shadow: none;
+            }
+
+            25%,
+            35% {
+                background: #fff;
+                box-shadow: 0 0 15px #fff;
+            }
+
+            100% {
+                background: #666;
+                box-shadow: none;
+            }
+        }
+
+        @keyframes flashOuter {
+
+            0%,
+            50% {
+                background: #333;
+                box-shadow: none;
+            }
+
+            55%,
+            65% {
+                background: rgba(255, 255, 255, 0.8);
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+
+            100% {
+                background: #333;
+                box-shadow: none;
+            }
+        }
+
+        #anim-broadcast .center-ring {
+            animation: ringCenter 3.5s infinite ease-out;
+        }
+
+        #anim-broadcast .inner-ring {
+            animation: ringInner 3.5s infinite ease-out;
+        }
+
+        #anim-broadcast .inner {
+            animation: flashInner 3.5s infinite ease-out;
+        }
+
+        #anim-broadcast .outer {
+            animation: flashOuter 3.5s infinite ease-out;
+        }
 
         /* 4. Store & Forward (The Mule Narrative) */
-        #anim-store .emisor { left: 15%; top: 50%; }
-        #anim-store .dest { left: 85%; top: 50%; }
-        #anim-store .bg-net { background: #1a1a1a; }
-        #anim-store .c1-1 { left: 35%; top: 25%; } #anim-store .c1-2 { left: 45%; top: 15%; }
-        #anim-store .c2-1 { left: 55%; top: 75%; } #anim-store .c2-2 { left: 65%; top: 85%; }
-        #anim-store .c-line1 { left: 35%; top: 25%; width: 15%; transform: rotate(-45deg); background: rgba(255,255,255,0.02); }
-        #anim-store .c-line2 { left: 55%; top: 75%; width: 15%; transform: rotate(45deg); background: rgba(255,255,255,0.02); }
-        #anim-store .mule { z-index: 4; }
-        
+        #anim-store .emisor {
+            left: 15%;
+            top: 50%;
+        }
+
+        #anim-store .dest {
+            left: 85%;
+            top: 50%;
+        }
+
+        #anim-store .bg-net {
+            background: #1a1a1a;
+        }
+
+        #anim-store .c1-1 {
+            left: 35%;
+            top: 25%;
+        }
+
+        #anim-store .c1-2 {
+            left: 45%;
+            top: 15%;
+        }
+
+        #anim-store .c2-1 {
+            left: 55%;
+            top: 75%;
+        }
+
+        #anim-store .c2-2 {
+            left: 65%;
+            top: 85%;
+        }
+
+        #anim-store .c-line1 {
+            left: 35%;
+            top: 25%;
+            width: 15%;
+            transform: rotate(-45deg);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        #anim-store .c-line2 {
+            left: 55%;
+            top: 75%;
+            width: 15%;
+            transform: rotate(45deg);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        #anim-store .mule {
+            z-index: 4;
+        }
+
         @keyframes muleJourney {
-            0% { left: -5%; top: 50%; background: #444; box-shadow: none; }
-            10% { left: 10%; top: 50%; background: #444; box-shadow: none; }
-            15% { left: 10%; top: 50%; background: var(--brand-red); box-shadow: 0 0 15px var(--brand-red); }
-            35% { left: 40%; top: 40%; background: var(--brand-red); box-shadow: 0 0 15px var(--brand-red); }
-            55% { left: 60%; top: 60%; background: var(--brand-red); box-shadow: 0 0 15px var(--brand-red); }
-            70% { left: 80%; top: 50%; background: var(--brand-red); box-shadow: 0 0 15px var(--brand-red); }
-            75% { left: 80%; top: 50%; background: #444; box-shadow: none; }
-            100% { left: 105%; top: 40%; background: #444; box-shadow: none; }
+            0% {
+                left: -5%;
+                top: 50%;
+                background: #444;
+                box-shadow: none;
+            }
+
+            10% {
+                left: 10%;
+                top: 50%;
+                background: #444;
+                box-shadow: none;
+            }
+
+            15% {
+                left: 10%;
+                top: 50%;
+                background: var(--brand-red);
+                box-shadow: 0 0 15px var(--brand-red);
+            }
+
+            35% {
+                left: 40%;
+                top: 40%;
+                background: var(--brand-red);
+                box-shadow: 0 0 15px var(--brand-red);
+            }
+
+            55% {
+                left: 60%;
+                top: 60%;
+                background: var(--brand-red);
+                box-shadow: 0 0 15px var(--brand-red);
+            }
+
+            70% {
+                left: 80%;
+                top: 50%;
+                background: var(--brand-red);
+                box-shadow: 0 0 15px var(--brand-red);
+            }
+
+            75% {
+                left: 80%;
+                top: 50%;
+                background: #444;
+                box-shadow: none;
+            }
+
+            100% {
+                left: 105%;
+                top: 40%;
+                background: #444;
+                box-shadow: none;
+            }
         }
+
         @keyframes packetTransfer {
-            0%, 10% { left: 15%; top: 50%; opacity: 1; }
-            15% { left: 10%; top: 50%; opacity: 1; }
-            15.1%, 70% { opacity: 0; }
-            70.1% { left: 80%; top: 50%; opacity: 1; }
-            75%, 100% { left: 85%; top: 50%; opacity: 1; }
+
+            0%,
+            10% {
+                left: 15%;
+                top: 50%;
+                opacity: 1;
+            }
+
+            15% {
+                left: 10%;
+                top: 50%;
+                opacity: 1;
+            }
+
+            15.1%,
+            70% {
+                opacity: 0;
+            }
+
+            70.1% {
+                left: 80%;
+                top: 50%;
+                opacity: 1;
+            }
+
+            75%,
+            100% {
+                left: 85%;
+                top: 50%;
+                opacity: 1;
+            }
         }
-        #anim-store .mule { animation: muleJourney 8s infinite ease-in-out; }
-        #anim-store .packet { animation: packetTransfer 8s infinite ease-in-out; }
+
+        #anim-store .mule {
+            animation: muleJourney 8s infinite ease-in-out;
+        }
+
+        #anim-store .packet {
+            animation: packetTransfer 8s infinite ease-in-out;
+        }
 
         /* SDK Terminal */
-        .sdk-section { background: rgba(10, 10, 12, 0.3); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); overflow: hidden;}
-        .sdk-container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
-        @media (max-width: 1000px) { .sdk-container { grid-template-columns: 1fr; } }
-        
-        .code-window { background: #030303; border: 1px solid #1a1a1a; border-radius: 6px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.6); }
-        .code-header { background: #080808; padding: 10px 16px; display: flex; gap: 8px; border-bottom: 1px solid #1a1a1a; align-items: center; }
-        .code-header-text { font-family: var(--font-mono); font-size: 0.7rem; color: #555; margin-left: auto; letter-spacing: 0.05em; }
-        .dot { width: 10px; height: 10px; border-radius: 50%; }
-        .dot.r { background: #ff5f56; } .dot.y { background: #ffbd2e; } .dot.g { background: #27c93f; }
-        .code-body { padding: 2rem; font-family: var(--font-mono); font-size: 0.8rem; color: #d4d4d4; overflow-x: auto; line-height: 1.8; }
-        .kw { color: #E23828; } .fn { color: #fff; font-weight: 700; } .str { color: #a5d6ff; } .cm { color: #666; font-style: italic; }
+        .sdk-section {
+            background: rgba(10, 10, 12, 0.3);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .sdk-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 1000px) {
+            .sdk-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .code-window {
+            background: #030303;
+            border: 1px solid #1a1a1a;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .code-header {
+            background: #080808;
+            padding: 10px 16px;
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid #1a1a1a;
+            align-items: center;
+        }
+
+        .code-header-text {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: #555;
+            margin-left: auto;
+            letter-spacing: 0.05em;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot.r {
+            background: #ff5f56;
+        }
+
+        .dot.y {
+            background: #ffbd2e;
+        }
+
+        .dot.g {
+            background: #27c93f;
+        }
+
+        .code-body {
+            padding: 2rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #d4d4d4;
+            overflow-x: auto;
+            line-height: 1.8;
+        }
+
+        .kw {
+            color: #E23828;
+        }
+
+        .fn {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .str {
+            color: #a5d6ff;
+        }
+
+        .cm {
+            color: #666;
+            font-style: italic;
+        }
 
         /* Use Cases Grid */
-        .use-cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--border-color); border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; }
-        .use-case-item { background: var(--bg-base); padding: 2.5rem 2rem; transition: background 0.3s; }
-        .use-case-item:hover { background: #080808; }
-        .use-case-icon { font-size: 1.5rem; margin-bottom: 1.2rem; filter: grayscale(100%) opacity(0.5); transition: all 0.3s; }
-        .use-case-item:hover .use-case-icon { filter: grayscale(0%) opacity(1); transform: translateY(-3px); }
-        .use-case-item h3 { font-size: 1rem; font-family: var(--font-mono); font-weight: 600; margin-bottom: 0.5rem; }
-        .use-case-item p { color: var(--text-muted); font-size: 0.85rem; }
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1px;
+            background: var(--border-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .use-case-item {
+            background: var(--bg-base);
+            padding: 2.5rem 2rem;
+            transition: background 0.3s;
+        }
+
+        .use-case-item:hover {
+            background: #080808;
+        }
+
+        .use-case-icon {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            filter: grayscale(100%) opacity(0.5);
+            transition: all 0.3s;
+        }
+
+        .use-case-item:hover .use-case-icon {
+            filter: grayscale(0%) opacity(1);
+            transform: translateY(-3px);
+        }
+
+        .use-case-item h3 {
+            font-size: 1rem;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .use-case-item p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
 
         /* Elite Donations Box */
-        .donate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .donate-card { background: #050505; border: 1px solid var(--border-color); border-radius: 4px; padding: 2rem; display: flex; flex-direction: column; transition: border-color 0.3s; }
-        .donate-card:hover { border-color: rgba(226, 56, 40, 0.4); }
-        .donate-icon { font-size: 1.2rem; margin-bottom: 1rem; font-family: var(--font-mono); font-weight: 700; }
-        .donate-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
-        .donate-card p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
-        .copy-box { 
-            background: #000; border: 1px solid #1a1a1a; border-radius: 2px; padding: 0.8rem 1rem; 
-            width: 100%; display: flex; justify-content: space-between; align-items: center; 
-            cursor: pointer; transition: all 0.2s; font-family: var(--font-mono); 
-            font-size: 0.75rem; color: var(--text-muted); margin-top: auto;
+        .donate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
-        .copy-box:hover { border-color: var(--brand-red); color: var(--text-main); background: rgba(226, 56, 40, 0.05); }
+
+        .donate-card {
+            background: #050505;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.3s;
+        }
+
+        .donate-card:hover {
+            border-color: rgba(226, 56, 40, 0.4);
+        }
+
+        .donate-icon {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-mono);
+            font-weight: 700;
+        }
+
+        .donate-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .donate-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .copy-box {
+            background: #000;
+            border: 1px solid #1a1a1a;
+            border-radius: 2px;
+            padding: 0.8rem 1rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: auto;
+        }
+
+        .copy-box:hover {
+            border-color: var(--brand-red);
+            color: var(--text-main);
+            background: rgba(226, 56, 40, 0.05);
+        }
 
         /* FAQ Accordion */
-        .faq-container { max-width: 800px; margin: 0 auto; border-top: 1px solid var(--border-color); }
-        details { border-bottom: 1px solid var(--border-color); overflow: hidden; }
-        summary { padding: 1.5rem 0; font-weight: 500; font-size: 1rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); }
-        summary::-webkit-details-marker { display: none; }
-        summary::after { content: '+'; font-size: 1.2rem; color: #555; transition: transform 0.3s; }
-        details[open] summary::after { transform: rotate(45deg); color: var(--brand-red); }
-        .faq-content { padding: 0 0 1.5rem 0; color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-top: 1px solid var(--border-color);
+        }
+
+        details {
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 1.5rem 0;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: #555;
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+            color: var(--brand-red);
+        }
+
+        .faq-content {
+            padding: 0 0 1.5rem 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
 
         /* Strict Legal Box */
-        .legal-box { 
-            margin-top: 3rem; background: rgba(226, 56, 40, 0.02); border: 1px solid rgba(226, 56, 40, 0.2); 
-            border-left: 3px solid var(--brand-red); padding: 2rem; border-radius: 2px;
+        .legal-box {
+            margin-top: 3rem;
+            background: rgba(226, 56, 40, 0.02);
+            border: 1px solid rgba(226, 56, 40, 0.2);
+            border-left: 3px solid var(--brand-red);
+            padding: 2rem;
+            border-radius: 2px;
         }
-        .legal-box h4 { color: var(--text-main); margin-bottom: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; }
-        .legal-box p { font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono); line-height: 1.6; }
+
+        .legal-box h4 {
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .legal-box p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            line-height: 1.6;
+        }
 
         /* Footer */
-        footer { border-top: 1px solid var(--border-color); padding: 4rem 5% 2rem; text-align: center; background: #020202; }
-        .footer-logo img { height: 20px; margin-bottom: 1.5rem; opacity: 0.4; filter: grayscale(100%); transition: opacity 0.3s; }
-        .footer-logo img:hover { opacity: 1; filter: none; }
-        .footer-contact { margin-bottom: 2rem; color: var(--text-muted); font-size: 0.85rem; font-family: var(--font-mono); }
-        .footer-contact a { color: var(--text-main); text-decoration: none; border-bottom: 1px solid var(--border-color); padding-bottom: 2px; }
-        .footer-disclaimer { color: #444; font-size: 0.7rem; max-width: 600px; margin: 0 auto; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.5; font-family: var(--font-mono); }
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 5% 2rem;
+            text-align: center;
+            background: #020202;
+        }
+
+        .footer-logo img {
+            height: 20px;
+            margin-bottom: 1.5rem;
+            opacity: 0.4;
+            filter: grayscale(100%);
+            transition: opacity 0.3s;
+        }
+
+        .footer-logo img:hover {
+            opacity: 1;
+            filter: none;
+        }
+
+        .footer-contact {
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: var(--font-mono);
+        }
+
+        .footer-contact a {
+            color: var(--text-main);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2px;
+        }
+
+        .footer-disclaimer {
+            color: #444;
+            font-size: 0.7rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.5;
+            font-family: var(--font-mono);
+        }
 
         /* Toast Notification */
-        #toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: #fff; color: #000; padding: 10px 20px; border-radius: 2px; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; opacity: 0; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); z-index: 2000; text-transform: uppercase; letter-spacing: 0.05em; }
-        #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+        #toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #fff;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 2px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 700;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 2000;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        #toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="ambient-glow"></div>
@@ -301,11 +1276,12 @@
                 <a href="#technology">Architecture</a>
                 <a href="#sdk">SDK Access</a>
                 <a href="#deployments">Deployments</a>
-                <a href="#research">Research</a>
+                <!-- <a href="#research">Research</a> -->
                 <a href="#faq">FAQ</a>
             </div>
             <div class="nav-right">
-                <a href="https://developer.bridgefy.services" target="_blank" class="btn btn-accent" style="padding: 0.5rem 1.2rem; font-size: 0.75rem; font-family: var(--font-mono);">REQUEST_LICENSE</a>
+                <a href="https://developer.bridgefy.services" target="_blank" class="btn btn-accent"
+                    style="padding: 0.5rem 1.2rem; font-size: 0.75rem; font-family: var(--font-mono);">REQUEST_LICENSE</a>
             </div>
         </div>
     </nav>
@@ -315,7 +1291,8 @@
         <div class="hero-content">
             <div class="hero-badge reveal-up hero-anim delay-100">Community Network Research</div>
             <h1 class="reveal-up hero-anim delay-200">Bridgefy App Offline Connectivity.</h1>
-            <p class="reveal-up hero-anim delay-300">Deploy enterprise-grade Bluetooth Low Energy (BLE) mesh networks. A closed-source telemetry and routing project for communities that cannot fail.</p>
+            <p class="reveal-up hero-anim delay-300">Deploy enterprise-grade Bluetooth Low Energy (BLE) mesh networks. A
+                closed-source telemetry and routing project for communities that cannot fail.</p>
             <div class="hero-actions reveal-up hero-anim delay-400">
                 <a href="https://github.com/bridgefy/bridgefy-app/releases" target="_blank" class="btn btn-primary">
                     Download APK
@@ -329,7 +1306,8 @@
         <div class="section-header reveal-up">
             <span class="section-label">Core Capabilities</span>
             <h2>Decentralized Routing Matrix</h2>
-            <p>Our proprietary algorithms establish highly resilient, device-to-device local networks, bypassing traditional cellular and ISP infrastructure entirely.</p>
+            <p>Our proprietary algorithms establish highly resilient, device-to-device local networks, bypassing
+                traditional cellular and ISP infrastructure entirely.</p>
         </div>
 
         <div class="features-grid">
@@ -337,35 +1315,45 @@
             <div class="feature-card feat-p2p reveal-up delay-100">
                 <div class="anim-window" id="anim-p2p">
                     <div class="anim-line"></div>
-                    <div class="node active-node n1"></div><div class="node dest n2"></div>
+                    <div class="node active-node n1"></div>
+                    <div class="node dest n2"></div>
                     <div class="packet"></div>
                 </div>
                 <h3>P2P Protocol</h3>
-                <p>Direct, encrypted device-to-device packet transfer up to 100 meters, immune to localized network outages.</p>
+                <p>Direct, encrypted device-to-device packet transfer up to 100 meters, immune to localized network
+                    outages.</p>
             </div>
 
             <!-- Mesh -->
             <div class="feature-card feat-mesh reveal-up delay-200">
                 <div class="anim-window" id="anim-mesh">
-                    <div class="anim-line l1"></div><div class="anim-line l2"></div>
-                    <div class="anim-line l3"></div><div class="anim-line l4"></div>
-                    <div class="node active-node n1"></div><div class="node n2"></div>
-                    <div class="node n3"></div><div class="node n4"></div>
+                    <div class="anim-line l1"></div>
+                    <div class="anim-line l2"></div>
+                    <div class="anim-line l3"></div>
+                    <div class="anim-line l4"></div>
+                    <div class="node active-node n1"></div>
+                    <div class="node n2"></div>
+                    <div class="node n3"></div>
+                    <div class="node n4"></div>
                     <div class="node dest n5"></div>
                     <div class="packet"></div>
                 </div>
                 <h3>Multi-Hop Mesh</h3>
-                <p>Intelligent routing algorithms allow packets to traverse multiple intermediate devices to reach targets far beyond standard BLE range.</p>
+                <p>Intelligent routing algorithms allow packets to traverse multiple intermediate devices to reach
+                    targets far beyond standard BLE range.</p>
             </div>
 
             <!-- Store & Forward (The Mule Narrative) -->
             <div class="feature-card feat-store reveal-up delay-100">
                 <div class="anim-window" id="anim-store">
                     <!-- Disconnected networks -->
-                    <div class="anim-line c-line1"></div><div class="anim-line c-line2"></div>
-                    <div class="node bg-net c1-1"></div><div class="node bg-net c1-2"></div>
-                    <div class="node bg-net c2-1"></div><div class="node bg-net c2-2"></div>
-                    
+                    <div class="anim-line c-line1"></div>
+                    <div class="anim-line c-line2"></div>
+                    <div class="node bg-net c1-1"></div>
+                    <div class="node bg-net c1-2"></div>
+                    <div class="node bg-net c2-1"></div>
+                    <div class="node bg-net c2-2"></div>
+
                     <!-- Core actors -->
                     <div class="node active-node emisor"></div>
                     <div class="node dest"></div>
@@ -373,28 +1361,33 @@
                     <div class="packet"></div>
                 </div>
                 <h3>Store & Forward Protocol</h3>
-                <p>Store & Forward architecture. The Emisor transmits the payload to a mobile node. The node physically carries the data past disconnected zones and securely deposits the parked payload upon reaching the Destination.</p>
+                <p>Store & Forward architecture. The Emisor transmits the payload to a mobile node. The node physically
+                    carries the data past disconnected zones and securely deposits the parked payload upon reaching the
+                    Destination.</p>
             </div>
 
             <!-- Broadcast Matrix -->
             <div class="feature-card feat-broad reveal-up delay-200">
                 <div class="anim-window" id="anim-broadcast">
-                    <div class="node outer o1"></div><div class="node outer o2"></div>
-                    <div class="node outer o3"></div><div class="node outer o4"></div>
+                    <div class="node outer o1"></div>
+                    <div class="node outer o2"></div>
+                    <div class="node outer o3"></div>
+                    <div class="node outer o4"></div>
                     <div class="node outer o5"></div>
-                    
+
                     <div class="pulse-ring inner-ring" style="left: 30%; top: 35%;"></div>
                     <div class="node inner i1"></div>
                     <div class="pulse-ring inner-ring" style="left: 70%; top: 35%;"></div>
                     <div class="node inner i2"></div>
                     <div class="pulse-ring inner-ring" style="left: 50%; top: 75%;"></div>
                     <div class="node inner i3"></div>
-                    
+
                     <div class="pulse-ring center-ring"></div>
                     <div class="node center-node"></div>
                 </div>
                 <h3>Broadcast Matrix</h3>
-                <p>Cascading unicast transmission to all surrounding nodes instantly. Creates a rippling mesh effect for emergency localized alerts and public broadcasting.</p>
+                <p>Cascading unicast transmission to all surrounding nodes instantly. Creates a rippling mesh effect for
+                    emergency localized alerts and public broadcasting.</p>
             </div>
         </div>
     </section>
@@ -404,17 +1397,23 @@
             <div class="sdk-text reveal-left">
                 <span class="section-label">Developer Access</span>
                 <h2>Integrate the Mesh.</h2>
-                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">Embed the Bridgefy SDK into your native iOS or Android application. Provide your users with an indestructible communication layer when conventional networks collapse.</p>
-                <a href="https://developer.bridgefy.services" target="_blank" class="btn btn-accent" style="font-family: var(--font-mono); font-size: 0.75rem;">REQUEST_LICENSE</a>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">Embed the Bridgefy SDK
+                    into your native iOS or Android application. Provide your users with an indestructible communication
+                    layer when conventional networks collapse.</p>
+                <a href="https://developer.bridgefy.services" target="_blank" class="btn btn-accent"
+                    style="font-family: var(--font-mono); font-size: 0.75rem;">REQUEST_LICENSE</a>
             </div>
             <div class="code-window reveal-right">
                 <div class="code-header">
-                    <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+                    <div class="dot r"></div>
+                    <div class="dot y"></div>
+                    <div class="dot g"></div>
                     <span class="code-header-text">bridgefySDK.kt</span>
                 </div>
                 <div class="code-body">
                     <span class="cm">// Initialize proprietary SDK engine</span><br>
-                    <span class="kw">val</span> bridgefy:  <span class="kw"></span> <span class="str">Bridgefy</span>;<br><br>
+                    <span class="kw">val</span> bridgefy: <span class="kw"></span> <span
+                        class="str">Bridgefy</span>;<br><br>
                     <span class="kw"></span><span class="kw"></span>bridgefy.init(<br>
                     &nbsp;&nbsp;bridgefyApiKey: <span class="str">UUID</span>,<br>
                     &nbsp;&nbsp;delegate: <span class="str">BridgefyDelegate?</span>,<br>
@@ -463,7 +1462,7 @@
             </div>
         </div>
     </section>
-
+    <!--
     <section id="research" class="section-padding container">
         <div class="section-header reveal-up">
             <span class="section-label">Support</span>
@@ -497,6 +1496,7 @@
             </div>
         </div>
     </section>
+-->
 
     <section id="faq" class="section-padding container">
         <div class="section-header reveal-up">
@@ -506,36 +1506,58 @@
         <div class="faq-container">
             <details class="reveal-up delay-100">
                 <summary>Do I need internet to use Bridgefy?</summary>
-                <div class="faq-content">No. Bridgefy operates entirely offline using Bluetooth Low Energy (BLE). A singular, momentary internet connection is only required upon initial download to validate security certificates. Subsequent usage is 100% autonomous.</div>
+                <div class="faq-content">No. Bridgefy operates entirely offline using Bluetooth Low Energy (BLE). A
+                    singular, momentary internet connection is only required upon initial download to validate security
+                    certificates. Subsequent usage is 100% autonomous.</div>
             </details>
             <details class="reveal-up delay-100">
                 <summary>Why are Location permissions mandatory?</summary>
-                <div class="faq-content">Android and iOS operating systems architecturally link Bluetooth Low Energy (BLE) scanning with Location Services to prevent malicious third-party tracking. We strictly adhere to these OS mandates to access the radio hardware. <strong>We do not ingest, record, or track spatial GPS coordinates.</strong></div>
+                <div class="faq-content">Android and iOS operating systems architecturally link Bluetooth Low Energy
+                    (BLE) scanning with Location Services to prevent malicious third-party tracking. We strictly adhere
+                    to these OS mandates to access the radio hardware. <strong>We do not ingest, record, or track
+                        spatial GPS coordinates.</strong></div>
             </details>
             <details class="reveal-up delay-200">
                 <summary>Why is my message stuck?</summary>
-                <div class="faq-content">The packet is utilizing the <strong>Store & Forward</strong> protocol. There is currently no direct physical path (via P2P or Mesh) to the recipient. The message is parked securely in memory and will automatically deploy the moment a valid network path is formed by a roaming device.</div>
+                <div class="faq-content">The packet is utilizing the <strong>Store & Forward</strong> protocol. There is
+                    currently no direct physical path (via P2P or Mesh) to the recipient. The message is parked securely
+                    in memory and will automatically deploy the moment a valid network path is formed by a roaming
+                    device.</div>
             </details>
             <details class="reveal-up delay-200">
                 <summary>What is the physical distance limit?</summary>
-                <div class="faq-content">A single point-to-point (P2P) hop can span approximately 100 meters (330 feet) depending on environmental interference (walls, trees). However, utilizing the Multi-Hop Mesh protocol, the total range is theoretically limitless as long as intermediary nodes are present to bridge the gap.</div>
+                <div class="faq-content">A single point-to-point (P2P) hop can span approximately 100 meters (330 feet)
+                    depending on environmental interference (walls, trees). However, utilizing the Multi-Hop Mesh
+                    protocol, the total range is theoretically limitless as long as intermediary nodes are present to
+                    bridge the gap.</div>
             </details>
             <details class="reveal-up delay-300">
                 <summary>Does continuous scanning drain battery?</summary>
-                <div class="faq-content">Bridgefy utilizes Bluetooth Low Energy (BLE), which is explicitly designed for minimal power consumption. While active meshing consumes more power than an idle state, our proprietary routing algorithms are heavily optimized to prevent excessive battery drain compared to standard Wi-Fi scanning.</div>
+                <div class="faq-content">Bridgefy utilizes Bluetooth Low Energy (BLE), which is explicitly designed for
+                    minimal power consumption. While active meshing consumes more power than an idle state, our
+                    proprietary routing algorithms are heavily optimized to prevent excessive battery drain compared to
+                    standard Wi-Fi scanning.</div>
             </details>
             <details class="reveal-up delay-300">
                 <summary>Will it work in Airplane Mode?</summary>
-                <div class="faq-content">Yes, provided you manually re-enable Bluetooth after activating Airplane Mode. The application relies solely on the local Bluetooth radio stack to establish the mesh.</div>
+                <div class="faq-content">Yes, provided you manually re-enable Bluetooth after activating Airplane Mode.
+                    The application relies solely on the local Bluetooth radio stack to establish the mesh.</div>
             </details>
             <details class="reveal-up delay-400">
                 <summary>Is the network secure?</summary>
-                <div class="faq-content">Point-to-Point and Multi-Hop Mesh transmissions are secured via End-to-End Encryption (E2EE). Intermediary nodes passing your packet cannot decrypt the payload. <em>Note: Broadcast Matrix messages are transmitted in plaintext, designed for public emergency alerts.</em></div>
+                <div class="faq-content">Point-to-Point and Multi-Hop Mesh transmissions are secured via End-to-End
+                    Encryption (E2EE). Intermediary nodes passing your packet cannot decrypt the payload. <em>Note:
+                        Broadcast Matrix messages are transmitted in plaintext, designed for public emergency
+                        alerts.</em></div>
             </details>
 
             <div class="legal-box reveal-up delay-400">
                 <h4>Legal & Regulatory Compliance</h4>
-                <p>Bridgefy engineers the routing protocol; we do not intercept the payload. All telemetry transmitted across the Bridgefy ecosystem is strictly P2P and agnostic to the transport layer. We do not monitor, retain, or possess decryption keys for user-generated data. Operators assume full liability for compliance with local cryptographic and telecommunication statutes in their respective deployment jurisdictions.</p>
+                <p>Bridgefy engineers the routing protocol; we do not intercept the payload. All telemetry transmitted
+                    across the Bridgefy ecosystem is strictly P2P and agnostic to the transport layer. We do not
+                    monitor, retain, or possess decryption keys for user-generated data. Operators assume full liability
+                    for compliance with local cryptographic and telecommunication statutes in their respective
+                    deployment jurisdictions.</p>
             </div>
         </div>
     </section>
@@ -545,7 +1567,8 @@
             <a href="#" class="footer-logo">
                 <img src="https://developer.bridgefy.services/assets/logo.svg" alt="Bridgefy">
             </a>
-            <p class="footer-contact">Corporate Inquiries & Partnerships: <br><a href="mailto:contact@bridgefy.me">contact@bridgefy.me</a></p>
+            <p class="footer-contact">Corporate Inquiries & Partnerships: <br><a
+                    href="mailto:contact@bridgefy.me">contact@bridgefy.me</a></p>
             <div class="footer-disclaimer">
                 THIS SOFTWARE IS A PROPRIETARY RESEARCH TOOL. IT IS NOT OPEN-SOURCE.<br>
                 THE MESH ROUTING ALGORITHMS AND SDK ARE CLOSED-SOURCE INTELLECTUAL PROPERTY OF BRIDGEFY INC.
@@ -576,7 +1599,7 @@
 
             // Select all elements with reveal classes
             const revealElements = document.querySelectorAll('.reveal, .reveal-up, .reveal-left, .reveal-right');
-            
+
             revealElements.forEach(el => {
                 // Do not observe elements tagged for immediate Hero animation on load
                 if (!el.classList.contains('hero-anim')) {
@@ -601,11 +1624,11 @@
             textArea.value = text;
             document.body.appendChild(textArea);
             textArea.select();
-            try { 
-                document.execCommand('copy'); 
-                showToast(); 
-            } catch (err) { 
-                console.error('Copy failed', err); 
+            try {
+                document.execCommand('copy');
+                showToast();
+            } catch (err) {
+                console.error('Copy failed', err);
             }
             document.body.removeChild(textArea);
         }
@@ -613,7 +1636,7 @@
         function showToast() {
             const toast = document.getElementById("toast");
             toast.className = "show";
-            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 2500);
+            setTimeout(() => {toast.className = toast.className.replace("show", "");}, 2500);
         }
 
 
@@ -621,9 +1644,9 @@
         const canvas = document.getElementById('hero-canvas');
         const ctx = canvas.getContext('2d');
         let width, height, nodes = [], packets = [];
-        
+
         const connectionDistance = 180;
-        const nodeCount = 70; 
+        const nodeCount = 70;
 
         function resize() {
             width = canvas.width = window.innerWidth;
@@ -654,7 +1677,7 @@
             }
             update() {
                 this.progress += this.speed;
-                return this.progress >= 1; 
+                return this.progress >= 1;
             }
             draw() {
                 const x = this.start.x + (this.end.x - this.start.x) * this.progress;
@@ -662,7 +1685,7 @@
                 ctx.beginPath(); ctx.arc(x, y, 2, 0, Math.PI * 2);
                 ctx.fillStyle = '#E23828';
                 ctx.shadowBlur = 15; ctx.shadowColor = '#E23828';
-                ctx.fill(); ctx.shadowBlur = 0; 
+                ctx.fill(); ctx.shadowBlur = 0;
             }
         }
 
@@ -674,15 +1697,15 @@
 
         function animateCanvas() {
             ctx.clearRect(0, 0, width, height);
-            nodes.forEach(n => { n.update(); n.draw(); });
+            nodes.forEach(n => {n.update(); n.draw();});
 
             for (let i = 0; i < nodes.length; i++) {
                 for (let j = i + 1; j < nodes.length; j++) {
                     const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
-                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    const dist = Math.sqrt(dx * dx + dy * dy);
                     if (dist < connectionDistance) {
                         ctx.beginPath(); ctx.moveTo(nodes[i].x, nodes[i].y); ctx.lineTo(nodes[j].x, nodes[j].y);
-                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.08 * (1 - dist/connectionDistance)})`;
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.08 * (1 - dist / connectionDistance)})`;
                         ctx.lineWidth = 1; ctx.stroke();
                         // Randomly spawn a data packet
                         if (Math.random() < 0.0003) packets.push(new CanvasPacket(nodes[i], nodes[j]));
@@ -698,4 +1721,5 @@
         }
     </script>
 </body>
+
 </html>
