@@ -6,8 +6,8 @@
   <h1>Bridgefy App: Community Network Research</h1>
   <p><b>Proprietary Mesh Routing • Decentralized Architecture</b></p>
 
-  [![Status: Community Beta](https://img.shields.io/badge/Status-Restricted_Beta-000000?style=for-the-badge&logo=github)](https://github.com/bridgefy/bridgefy-app/releases)
-  [![Platform: Android](https://img.shields.io/badge/Deployment-Android_APK-E23828?style=for-the-badge&logo=android)](https://github.com/bridgefy/bridgefy-app/releases)
+  [![Status: Community](https://img.shields.io/badge/Status-Restricted-000000?style=for-the-badge&logo=github)](releases)
+  [![Platform: Android](https://img.shields.io/badge/Deployment-Android_APK-E23828?style=for-the-badge&logo=android)](releases/download/v5.0.3/Bridgefy-app.apk)
   [![License: Proprietary](https://img.shields.io/badge/License-Closed_Source-000000?style=for-the-badge)](PRIVATE.md)
   [![Architecture: BLE](https://img.shields.io/badge/Architecture-BLE_Mesh-E23828?style=for-the-badge)](#)
   
