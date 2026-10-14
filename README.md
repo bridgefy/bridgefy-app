@@ -8,7 +8,7 @@
 
   [![Status: Community Beta](https://img.shields.io/badge/Status-Restricted_Beta-000000?style=for-the-badge&logo=github)](https://github.com/bridgefy/bridgefy-app/releases)
   [![Platform: Android](https://img.shields.io/badge/Deployment-Android_APK-E23828?style=for-the-badge&logo=android)](https://github.com/bridgefy/bridgefy-app/releases)
-  [![License: Proprietary](https://img.shields.io/badge/License-Closed_Source-000000?style=for-the-badge)](PRIVATE)
+  [![License: Proprietary](https://img.shields.io/badge/License-Closed_Source-000000?style=for-the-badge)](PRIVATE.md)
   [![Architecture: BLE](https://img.shields.io/badge/Architecture-BLE_Mesh-E23828?style=for-the-badge)](#)
   
   <br>
@@ -112,29 +112,6 @@ val messageId = bridgefy.send(
 )  
 ```
 *To request SDK licensing and integration support, [our developer portal](https://developer.bridgefy.services/).*
-
----
-
-## 💎 FUND THE INITIATIVE
-
-Maintaining backend infrastructure and refining decentralized algorithms requires extensive resources. Support the advancement of offline communication:
-
-<table>
-  <tr>
-    <td width="33%" align="center">
-      <b>💳 FIAT (PayPal)</b><br><br>
-      <a href="https://www.paypal.com/paypalme/bridgefy"><img src="https://img.shields.io/badge/Execute_Transfer-000000?style=for-the-badge&logo=paypal&logoColor=white" /></a>
-    </td>
-    <td width="33%" align="center">
-      <b>🪙 BITCOIN (BTC)</b><br><br>
-      <code>364WLk6ZLbTn...suvA5yeW</code>
-    </td>
-    <td width="34%" align="center">
-      <b>🔷 ETHEREUM (ETH)</b><br><br>
-      <code>0x287b7dA...FF524A1</code>
-    </td>
-  </tr>
-</table>
 
 ---
 
