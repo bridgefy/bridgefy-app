@@ -139,17 +139,17 @@ val messageId = bridgefy.send(
 
 <details>
   <summary><b>What is the physical distance limit?</b></summary>
-  A single point-to-point (P2P) hop can span approximately 100 meters (330 feet) depending on environmental interference (walls, trees). However, utilizing the Multi-Hop Mesh protocol, the total range is theoretically limitless as long as intermediary nodes are present to bridge the gap.
+  <blockquote>A single point-to-point (P2P) hop can span approximately 100 meters (330 feet) depending on environmental interference (walls, trees). However, utilizing the Multi-Hop Mesh protocol, the total range is theoretically limitless as long as intermediary nodes are present to bridge the gap.</blockquote>
 </details>
 
 <details>
   <summary><b>Does continuous scanning drain battery?</b></summary>
-  Bridgefy utilizes Bluetooth Low Energy (BLE), which is explicitly designed for minimal power consumption. While active meshing consumes more power than an idle state, our proprietary routing algorithms are heavily optimized to prevent excessive battery drain compared to standard Wi-Fi scanning.
+  <blockquote>Bridgefy utilizes Bluetooth Low Energy (BLE), which is explicitly designed for minimal power consumption. While active meshing consumes more power than an idle state, our proprietary routing algorithms are heavily optimized to prevent excessive battery drain compared to standard Wi-Fi scanning.</blockquote>
 </details>
 
 <details>
   <summary><b>Is the network secure?</b></summary>
-  Point-to-Point and Multi-Hop Mesh transmissions are secured via End-to-End Encryption (E2EE). Intermediary nodes passing your packet cannot decrypt the payload. Note: Broadcast Matrix messages are transmitted in plaintext, designed for public emergency alerts.
+  <blockquote>Point-to-Point and Multi-Hop Mesh transmissions are secured via End-to-End Encryption (E2EE). Intermediary nodes passing your packet cannot decrypt the payload. Note: Broadcast Matrix messages are transmitted in plaintext, designed for public emergency alerts.</blockquote>
 </details>
 
 ---
