@@ -66,26 +66,20 @@ Below is a visualization of our proprietary Multi-Hop and Store & Forward routin
 
 ```mermaid
 graph LR
-    subgraph Zone A [Offline Zone A]
-    S[Sender] -->|1. Transmit| N1(Node 1)
-    N1 -->|2. Park Payload| M{Mobile Mule}
-    end
-
-    M -.->|3. Physical Transit| M2{Mobile Mule}
-
-    subgraph Zone B [Offline Zone B]
-    M2 -->|4. Forward| N2(Node 2)
-    N2 -->|5. Deliver| R[Receiver]
-    end
-
-    style S fill:#000000,stroke:#E23828,stroke-width:2px,color:#fff
-    style R fill:#000000,stroke:#E23828,stroke-width:2px,color:#fff
-    style M fill:#E23828,stroke:#fff,stroke-width:2px,color:#fff
-    style M2 fill:#E23828,stroke:#fff,stroke-width:2px,color:#fff
-    style N1 fill:#1a1a1a,stroke:#333,color:#fff
-    style N2 fill:#1a1a1a,stroke:#333,color:#fff
-    style Zone A fill:none,stroke:#333,stroke-dasharray: 5 5
-    style Zone B fill:none,stroke:#333,stroke-dasharray: 5 5
+    A((Sender)) -.->|Packet| B((Node 1))
+    A -.-> C((Node 2))
+    B -.-> D((Node 3))
+    B -.-> F((Node 4))
+    C -.-> D
+    F -.-> E
+    D -.->|Packet| E((Recipient))
+    
+    style A fill:#E23828,stroke:#B71C1C,stroke-width:2px,color:#fff
+    style E fill:#E23828,stroke:#B71C1C,stroke-width:2px,color:#fff
+    style B fill:#1e293b,stroke:#64748b,stroke-dasharray: 5 5,color:#fff
+    style C fill:#1e293b,stroke:#64748b,stroke-dasharray: 5 5,color:#fff
+    style D fill:#1e293b,stroke:#64748b,stroke-dasharray: 5 5,color:#fff
+    style F fill:#1e293b,stroke:#64748b,stroke-dasharray: 5 5,color:#fff
 ```
 
 ---
