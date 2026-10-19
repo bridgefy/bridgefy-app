@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bridgefy | Enterprise-Grade Offline Mesh Network</title>
+    <title>Bridgefy | The Messaging App That Works Without Internet</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
 
@@ -1273,15 +1273,15 @@
                 <img src="https://developer.bridgefy.services/assets/logo.svg" alt="Bridgefy Logo">
             </a>
             <div class="nav-links">
-                <a href="#technology">Architecture</a>
-                <a href="#sdk">SDK Access</a>
-                <a href="#deployments">Deployments</a>
+                <a href="#technology">How It Works</a>
+                <a href="#sdk">SDK</a>
+                <a href="#deployments">Use Cases</a>
                 <!-- <a href="#research">Research</a> -->
                 <a href="#faq">FAQ</a>
             </div>
             <div class="nav-right">
-                <a href="https://developer.bridgefy.services" target="_blank" class="btn btn-accent"
-                    style="padding: 0.5rem 1.2rem; font-size: 0.75rem; font-family: var(--font-mono);">REQUEST_LICENSE</a>
+                <a href="https://github.com/bridgefy/bridgefy-app/releases/download/v5.0.3/Bridgefy-app.apk" target="_blank" class="btn btn-accent"
+                    style="padding: 0.5rem 1.2rem; font-size: 0.75rem; font-family: var(--font-mono);">Download</a>
             </div>
         </div>
     </nav>
@@ -1289,25 +1289,23 @@
     <header class="hero">
         <canvas id="hero-canvas"></canvas>
         <div class="hero-content">
-            <div class="hero-badge reveal-up hero-anim delay-100">Community Network Research</div>
-            <h1 class="reveal-up hero-anim delay-200">Bridgefy App Offline Connectivity.</h1>
-            <p class="reveal-up hero-anim delay-300">Deploy enterprise-grade Bluetooth Low Energy (BLE) mesh networks. A
-                closed-source telemetry and routing project for communities that cannot fail.</p>
+            <div class="hero-badge reveal-up hero-anim delay-100">Bridgefy</div>
+            <h1 class="reveal-up hero-anim delay-200">The Messaging App That Works Without Internet</h1>
+            <p class="reveal-up hero-anim delay-300">Bridgefy is a free messaging app that lets you share text messages, location, voice notes, and much more without needing an Internet connection or SMS. It uses Bluetooth to connect you with people who are 100 meters or closer from you.</br><br><b>Only download Bridgefy from this page if you can't find it on the Google Play store.</b> Bridgefy for iPhone can be found on the Apple App Store.</br></p>
             <div class="hero-actions reveal-up hero-anim delay-400">
                 <a href="https://github.com/bridgefy/bridgefy-app/releases/download/v5.0.3/Bridgefy-app.apk" target="_blank" class="btn btn-primary">
-                    Download APK
+                    Android APK Download
                 </a>
-                <a href="#technology" class="btn btn-outline">Examine Architecture</a>
+                <a href="https://www.youtube.com/watch?v=iBslmFlSBjQ" class="btn btn-outline">Demo Video</a>
             </div>
         </div>
     </header>
 
     <section id="technology" class="section-padding container">
         <div class="section-header reveal-up">
-            <span class="section-label">Core Capabilities</span>
-            <h2>Decentralized Routing Matrix</h2>
-            <p>Our proprietary algorithms establish highly resilient, device-to-device local networks, bypassing
-                traditional cellular and ISP infrastructure entirely.</p>
+            <span class="section-label">How it works</span>
+            <h2>Stay in touch when it matters the most</h2>
+            <p>Bridgefy works when other apps abandon you. Use it during music festivals, concerts, at sports stadiums, after natural disasters, or in the middle of large crowds.</p>
         </div>
 
         <div class="features-grid">
@@ -1319,9 +1317,8 @@
                     <div class="node dest n2"></div>
                     <div class="packet"></div>
                 </div>
-                <h3>P2P Protocol</h3>
-                <p>Direct, encrypted device-to-device packet transfer up to 100 meters, immune to localized network
-                    outages.</p>
+                <h3>Direct Messages</h3>
+                <p>Direct and encrypted person-to-person messaging across 100 meters. Useful inside classrooms, airplanes, or international travel.</p>
             </div>
 
             <!-- Mesh -->
@@ -1338,9 +1335,8 @@
                     <div class="node dest n5"></div>
                     <div class="packet"></div>
                 </div>
-                <h3>Multi-Hop Mesh</h3>
-                <p>Intelligent routing algorithms allow packets to traverse multiple intermediate devices to reach
-                    targets far beyond standard BLE range.</p>
+                <h3>Long-Distance Messaging</h3>
+                <p>You can reach people who are more than 100 meters from you if there are other Bridgefy users between you. Messages "hop" from one device to another in a chain. Useful while in the middle of large crowds.</p>
             </div>
 
             <!-- Store & Forward (The Mule Narrative) -->
@@ -1360,10 +1356,8 @@
                     <div class="node mule"></div>
                     <div class="packet"></div>
                 </div>
-                <h3>Store & Forward Protocol</h3>
-                <p>Store & Forward architecture. The Emisor transmits the payload to a mobile node. The node physically
-                    carries the data past disconnected zones and securely deposits the parked payload upon reaching the
-                    Destination.</p>
+                <h3>Delayed Messaging</h3>
+                <p>Your messages are still delivered even if the person you're trying to reach isn't near you when you send the message. Your messages can be "carried" by other users and delivered later. Useful after natural disasters.</p>
             </div>
 
             <!-- Broadcast Matrix -->
@@ -1385,9 +1379,8 @@
                     <div class="pulse-ring center-ring"></div>
                     <div class="node center-node"></div>
                 </div>
-                <h3>Broadcast Matrix</h3>
-                <p>Cascading unicast transmission to all surrounding nodes instantly. Creates a rippling mesh effect for
-                    emergency localized alerts and public broadcasting.</p>
+                <h3>Publicly-Broadcast Messaging</h3>
+                <p>Use the Public chat inside Bridgefy to send messages to everyone around you. Useful after natural disasters, while at a concert or sports event with friends, and inside classrooms.</p>
             </div>
         </div>
     </section>
@@ -1395,13 +1388,13 @@
     <section id="sdk" class="section-padding sdk-section">
         <div class="container sdk-container">
             <div class="sdk-text reveal-left">
-                <span class="section-label">Developer Access</span>
-                <h2>Integrate the Mesh.</h2>
+                <span class="section-label">Bridgefy for Enterprise</span>
+                <h2>Make your own app work without Internet.</h2>
                 <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">Embed the Bridgefy SDK
                     into your native iOS or Android application. Provide your users with an indestructible communication
                     layer when conventional networks collapse.</p>
-                <a href="https://developer.bridgefy.services" target="_blank" class="btn btn-accent"
-                    style="font-family: var(--font-mono); font-size: 0.75rem;">REQUEST_LICENSE</a>
+                <a href="http://bridgefy.me/sdk" target="_blank" class="btn btn-accent"
+                    style="font-family: var(--font-mono); font-size: 0.75rem;">Learn More</a>
             </div>
             <div class="code-window reveal-right">
                 <div class="code-header">
@@ -1436,29 +1429,29 @@
 
     <section id="deployments" class="section-padding container">
         <div class="section-header reveal-up">
-            <span class="section-label">Deployment Scenarios</span>
-            <h2>Where Infrastructure Fails</h2>
+            <span class="section-label">Use Cases</span>
+            <h2>Bridgefy works when nothing else does</h2>
         </div>
         <div class="use-cases-grid">
             <div class="use-case-item reveal-up delay-100">
                 <div class="use-case-icon">🌪️</div>
-                <h3>Disaster Response</h3>
-                <p>Maintain critical operations during grid failures and environmental crises.</p>
+                <h3>Natural Disasters</h3>
+                <p>Maintain critical communications during network failures and environmental crises.</p>
             </div>
             <div class="use-case-item reveal-up delay-200">
                 <div class="use-case-icon">🏟️</div>
-                <h3>High-Density Sectors</h3>
-                <p>Bypass cellular congestion in massive stadiums and live events.</p>
+                <h3>High-Density Places</h3>
+                <p>Stay in touch in massive stadiums and live events.</p>
             </div>
             <div class="use-case-item reveal-up delay-300">
                 <div class="use-case-icon">🏔️</div>
-                <h3>Remote Operations</h3>
-                <p>Secure logistics and communications in areas devoid of ISP coverage.</p>
+                <h3>Sensitive Situations</h3>
+                <p>Stay safe and communicated even when others don't want you to.</p>
             </div>
             <div class="use-case-item reveal-up delay-400">
                 <div class="use-case-icon">🚢</div>
-                <h3>Maritime Deployments</h3>
-                <p>Inter-vessel and deep-deck communication without satellite latency.</p>
+                <h3>Travel</h3>
+                <p>For when your data might not work while on an airplane, on a cruise ship, or traveling in another country.</p>
             </div>
         </div>
     </section>
@@ -1505,59 +1498,49 @@
         </div>
         <div class="faq-container">
             <details class="reveal-up delay-100">
-                <summary>Do I need internet to use Bridgefy?</summary>
-                <div class="faq-content">No. Bridgefy operates entirely offline using Bluetooth Low Energy (BLE). A
-                    singular, momentary internet connection is only required upon initial download to validate security
-                    certificates. Subsequent usage is 100% autonomous.</div>
+                <summary>Do I need Internet to use Bridgefy?</summary>
+                <div class="faq-content">No! Bridgefy uses Bluetooth to send messages without Internet. You only need an Internet connection to download and set up the app for the first time. After that, you can use Bridgefy completely offline.</div>
             </details>
             <details class="reveal-up delay-100">
-                <summary>Why are Location permissions mandatory?</summary>
-                <div class="faq-content">Android and iOS operating systems architecturally link Bluetooth Low Energy
-                    (BLE) scanning with Location Services to prevent malicious third-party tracking. We strictly adhere
-                    to these OS mandates to access the radio hardware. <strong>We do not ingest, record, or track
-                        spatial GPS coordinates.</strong></div>
+                <summary>Why are location permissions mandatory?</summary>
+                <div class="faq-content">Android and iPhone require location permission for certain Bluetooth features to work. Bridgefy needs Bluetooth to connect you with nearby users, even without Internet.
+
+Bridgefy does not collect, save, or track your GPS location.</strong></div>
             </details>
             <details class="reveal-up delay-200">
                 <summary>Why is my message stuck?</summary>
-                <div class="faq-content">The packet is utilizing the <strong>Store & Forward</strong> protocol. There is
-                    currently no direct physical path (via P2P or Mesh) to the recipient. The message is parked securely
-                    in memory and will automatically deploy the moment a valid network path is formed by a roaming
-                    device.</div>
+                <div class="faq-content">Your message is waiting for a way to reach the other person. This happens when they're too far away and there aren't enough Bridgefy users nearby to help deliver it.
+
+Don't worry! Your message is saved and will automatically be sent when a connection becomes available.</div>
             </details>
             <details class="reveal-up delay-200">
-                <summary>What is the physical distance limit?</summary>
-                <div class="faq-content">A single point-to-point (P2P) hop can span approximately 100 meters (330 feet)
-                    depending on environmental interference (walls, trees). However, utilizing the Multi-Hop Mesh
-                    protocol, the total range is theoretically limitless as long as intermediary nodes are present to
-                    bridge the gap.</div>
+                <summary>How far can Bridgefy messages travel?</summary>
+                <div class="faq-content">Bridgefy can send messages directly to someone up to 330 feet (100 meters) away, depending on obstacles like walls or trees.
+
+If other Bridgefy users are nearby, your messages can travel from phone to phone to reach people much farther away. The more users there are, the farther your messages can go!</div>
             </details>
             <details class="reveal-up delay-300">
-                <summary>Does continuous scanning drain battery?</summary>
-                <div class="faq-content">Bridgefy utilizes Bluetooth Low Energy (BLE), which is explicitly designed for
-                    minimal power consumption. While active meshing consumes more power than an idle state, our
-                    proprietary routing algorithms are heavily optimized to prevent excessive battery drain compared to
-                    standard Wi-Fi scanning.</div>
+                <summary>Does Bridgefy use a lot of battery?</summary>
+                <div class="faq-content">No! Bridgefy uses a special type of Bluetooth designed to save battery. While sending and receiving messages uses some power, Bridgefy is designed to keep battery usage as low as possible.</div>
             </details>
             <details class="reveal-up delay-300">
-                <summary>Will it work in Airplane Mode?</summary>
-                <div class="faq-content">Yes, provided you manually re-enable Bluetooth after activating Airplane Mode.
-                    The application relies solely on the local Bluetooth radio stack to establish the mesh.</div>
+                <summary>Will Bridgefy work on Airplane Mode?</summary>
+                <div class="faq-content">It could, but we don't recommend it. Airplane Mode can interfere with Bluetooth and location permissions, which Bridgefy needs to work properly.
+
+For the best experience, keep Airplane Mode turned off. Don't worry: Bridgefy can't use your Internet connection anyway!</div>
             </details>
             <details class="reveal-up delay-400">
-                <summary>Is the network secure?</summary>
-                <div class="faq-content">Point-to-Point and Multi-Hop Mesh transmissions are secured via End-to-End
-                    Encryption (E2EE). Intermediary nodes passing your packet cannot decrypt the payload. <em>Note:
-                        Broadcast Matrix messages are transmitted in plaintext, designed for public emergency
-                        alerts.</em></div>
+                <summary>Are my messages safe and private?</summary>
+                <div class="faq-content">Yes! Your private messages are encrypted, meaning only you and the person you're messaging can read them. Even if your message passes through other Bridgefy users' phones, they can't read it.
+
+However, broadcast messages are public and not encrypted, so anyone nearby using Bridgefy can read them.</em></div>
             </details>
 
             <div class="legal-box reveal-up delay-400">
                 <h4>Legal & Regulatory Compliance</h4>
-                <p>Bridgefy engineers the routing protocol; we do not intercept the payload. All telemetry transmitted
-                    across the Bridgefy ecosystem is strictly P2P and agnostic to the transport layer. We do not
-                    monitor, retain, or possess decryption keys for user-generated data. Operators assume full liability
-                    for compliance with local cryptographic and telecommunication statutes in their respective
-                    deployment jurisdictions.</p>
+                <p>Bridgefy allows users to communicate directly through Bluetooth without an Internet connection. We do not read, monitor, or store private messages, and we do not have the encryption keys needed to access them.
+
+Users are responsible for making sure their use of Bridgefy follows the laws and regulations in their country, including any rules about encrypted communications and wireless technology.</p>
             </div>
         </div>
     </section>
